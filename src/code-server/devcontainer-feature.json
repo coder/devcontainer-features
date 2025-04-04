@@ -3,7 +3,21 @@
     "id": "code-server",
     "version": "1.0.0",
     "description": "VS Code in the browser",
-    "options": {},
+    "options": {
+        "host": {
+            "type": "string",
+            "default": "127.0.0.1"
+        },
+        "port": {
+            "type": "string",
+            "default": "8080"
+        },
+        "args": {
+            "type": "string",
+            "default": ""
+        }
+    },
+    "entrypoint": "/usr/local/bin/code-server-entrypoint",
     "dependsOn": {
         "ghcr.io/devcontainers/features/common-utils:2": {}
     }

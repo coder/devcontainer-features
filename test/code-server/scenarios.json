@@ -1,8 +1,18 @@
 {
-    "code-server": {
+    "code-server-modified-port": {
         "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
         "features": {
-            "code-server": {}
+            "code-server": {
+                "port": "1234"
+            }
+        }
+    },
+    "code-server-modified-host": {
+        "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+        "features": {
+            "code-server": {
+                "host": "0.0.0.0"
+            }
         }
     }
 }
