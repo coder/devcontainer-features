@@ -1,0 +1,10 @@
+{
+    "name": "code-server",
+    "id": "code-server",
+    "version": "1.0.0",
+    "description": "VS Code in the browser",
+    "options": {},
+    "dependsOn": {
+        "ghcr.io/devcontainers/features/common-utils:2": {}
+    }
+}

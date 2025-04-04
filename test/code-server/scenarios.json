@@ -1,10 +1,8 @@
 {
-    "hello": {
+    "code-server": {
         "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
         "features": {
-            "hello": {
-                "greeting": "hello"
-            }
+            "code-server": {}
         }
     }
 }
