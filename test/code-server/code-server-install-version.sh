@@ -9,10 +9,8 @@ check "code-server version" code-server --version
 check "code-server running" pgrep -f 'code-server/lib/node.*/code-server'
 check "code-server listening" sudo lsof -i "@0.0.0.0:8080"
 
-extensions=$(sudo code-server --list-extensions)
-
-check "code-server extensions [rust-lang.rust-analyzer]" grep 'rust-lang.rust-analyzer\>' <<<"$extensions"
-check "code-server extensions [ms-python.python]"        grep 'ms-python.python\>'        <<<"$extensions"
+version=$(code-server --version)
+check "code-server is correct version" grep '4.98.0\>' <<<"$version"
 
 # Report results
 reportResults

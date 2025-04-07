@@ -4,6 +4,10 @@
     "version": "1.0.0",
     "description": "VS Code in the browser",
     "options": {
+        "version": {
+            "type": "string",
+            "default": ""
+        },
         "host": {
             "type": "string",
             "default": "127.0.0.1"

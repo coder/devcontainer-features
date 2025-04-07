@@ -22,5 +22,13 @@
                 "extensions": ["rust-lang.rust-analyzer", "ms-python.python"]
             }
         }
+    },
+    "code-server-install-version": {
+        "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+        "features": {
+            "code-server": {
+                "version": "4.98.0"
+            }
+        }
     }
 }

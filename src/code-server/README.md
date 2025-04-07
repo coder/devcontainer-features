@@ -15,6 +15,7 @@ VS Code in the browser
 
 | Options Id | Description | Type | Default Value |
 |-----|-----|-----|-----|
+| version | - | string | - |
 | host | - | string | 127.0.0.1 |
 | port | - | string | 8080 |
 | args | - | string | - |
