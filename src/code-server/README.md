@@ -7,7 +7,7 @@ VS Code in the browser
 
 ```json
 "features": {
-    "ghcr.io/DanielleMaywood/devcontainer-features/code-server:1": {}
+    "ghcr.io/coder/devcontainer-features/code-server:1": {}
 }
 ```
 
@@ -15,7 +15,10 @@ VS Code in the browser
 
 | Options Id | Description | Type | Default Value |
 |-----|-----|-----|-----|
-
+| host | - | string | 127.0.0.1 |
+| port | - | string | 8080 |
+| args | - | string | - |
+| extensions | - | string | - |
 
 
 
