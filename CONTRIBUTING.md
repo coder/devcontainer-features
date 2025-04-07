@@ -1,6 +1,6 @@
-# Contributing to Coder's Dev Container Features
+# Contributing to DanielleMaywood's Dev Container Features
 
-This guide contains information about how to contribute to this collection of dev container Features maintained by Coder.
+This guide contains information about how to contribute to this collection of dev container Features maintained by DanielleMaywood.
 
 ## Current Features
 
@@ -53,12 +53,17 @@ src/
 
 ## Testing Your Feature
 
-Before submitting a PR, test your feature by building and using a dev container that incorporates it:
+Before submitting a PR, test your feature using the Dev Container CLI:
 
 ```bash
 # From the repository root
-cd ..
-devcontainer build --workspace-folder ./devcontainer-features --feature-set src/your-feature-name
+devcontainer features test -f your-feature-name
+```
+
+You can also test all features:
+
+```bash
+devcontainer features test
 ```
 
 ## Versioning Guidelines
