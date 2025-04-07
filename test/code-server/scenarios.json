@@ -14,5 +14,13 @@
                 "host": "0.0.0.0"
             }
         }
+    },
+    "code-server-extensions": {
+        "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+        "features": {
+            "code-server": {
+                "extensions": ["rust-lang.rust-analyzer", "ms-python.python"]
+            }
+        }
     }
 }

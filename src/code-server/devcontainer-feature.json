@@ -15,6 +15,10 @@
         "args": {
             "type": "string",
             "default": ""
+        },
+        "extensions": {
+            "type": "string",
+            "default": ""
         }
     },
     "entrypoint": "/usr/local/bin/code-server-entrypoint",
