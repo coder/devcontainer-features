@@ -1,6 +1,6 @@
-# Contributing to DanielleMaywood's Dev Container Features
+# Contributing to Coder's Dev Container Features
 
-This guide contains information about how to contribute to this collection of dev container Features maintained by DanielleMaywood.
+This guide contains information about how to contribute to this collection of dev container Features maintained by Coder.
 
 ## Current Features
 
@@ -57,13 +57,24 @@ Before submitting a PR, test your feature using the Dev Container CLI:
 
 ```bash
 # From the repository root
-devcontainer features test -f your-feature-name
+devcontainer features test -f your-feature-name -i mcr.microsoft.com/devcontainers/base:ubuntu
 ```
 
-You can also test all features:
+You can also test all features or test with different base images:
 
 ```bash
-devcontainer features test
+# Test all features
+devcontainer features test -a
+
+# Test with a specific base image
+devcontainer features test -f your-feature-name -i mcr.microsoft.com/devcontainers/base:debian
+```
+
+You can also test features with specific options:
+
+```bash
+# Test with custom options
+devcontainer features test -f code-server -i mcr.microsoft.com/devcontainers/base:ubuntu --skip-scenarios -t "port=8123"
 ```
 
 ## Versioning Guidelines
@@ -82,12 +93,12 @@ Features in this repository are automatically published to GitHub Container Regi
 
 The published features will be available at:
 ```
-ghcr.io/DanielleMaywood/devcontainer-features/feature-id:version
+ghcr.io/coder/devcontainer-features/feature-id:version
 ```
 
 For example, the current code-server feature is referenced as:
 ```
-ghcr.io/DanielleMaywood/devcontainer-features/code-server:1
+ghcr.io/coder/devcontainer-features/code-server:1
 ```
 
 ### Making Features Public
@@ -96,7 +107,7 @@ After a feature is published to GHCR, make it public by:
 
 1. Navigate to the package settings in GHCR:
    ```
-   https://github.com/users/DanielleMaywood/packages/container/devcontainer-features%2Fcode-server/settings
+   https://github.com/users/coder/packages/container/devcontainer-features%2Fcode-server/settings
    ```
 2. Change the visibility setting to "Public"
 
@@ -116,4 +127,4 @@ After a feature is published to GHCR, make it public by:
 
 ## Getting Help
 
-If you have questions about contributing to this repository, please open an issue or reach out to DanielleMaywood directly.
+If you have questions about contributing to this repository, please open an issue or reach out to the Coder team directly.

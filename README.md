@@ -12,7 +12,7 @@ The `code-server` feature installs [code-server](https://github.com/coder/code-s
 {
     "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
     "features": {
-        "ghcr.io/DanielleMaywood/devcontainer-features/code-server:1": {
+        "ghcr.io/coder/devcontainer-features/code-server:1": {
             "host": "127.0.0.1",
             "port": "8080",
             "args": "",
