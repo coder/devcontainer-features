@@ -15,6 +15,7 @@ jobs:
         features:
           - code-server
         baseImage:
+          - fedora:latest
           - debian:latest
           - ubuntu:latest
           - mcr.microsoft.com/devcontainers/base:ubuntu
