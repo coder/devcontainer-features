@@ -22,7 +22,7 @@ cat > /usr/local/bin/code-server-entrypoint \
 #!/usr/bin/env bash
 set -e
 
-runuser -l $_REMOTE_USER -c 'code-server --bind-addr "$HOST:$PORT" \$ARGS'
+su $_REMOTE_USER -c 'code-server --bind-addr "$HOST:$PORT" \$ARGS'
 EOF
 
 chmod +x /usr/local/bin/code-server-entrypoint
