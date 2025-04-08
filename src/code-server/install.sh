@@ -17,12 +17,16 @@ do
     code-server --install-extension "$extension"
 done
 
+if [ -n "$WORKSPACE" ]; then
+    WORKSPACE="$_REMOTE_USER_HOME"
+fi
+
 cat > /usr/local/bin/code-server-entrypoint \
 << EOF
 #!/usr/bin/env bash
 set -e
 
-su $_REMOTE_USER -c 'code-server --bind-addr "$HOST:$PORT" \$ARGS'
+su $_REMOTE_USER -c 'code-server --bind-addr "$HOST:$PORT" \$ARGS "$WORKSPACE"'
 EOF
 
 chmod +x /usr/local/bin/code-server-entrypoint
