@@ -9,9 +9,7 @@ check "code-server version" code-server --version
 check "code-server running" pgrep -f 'code-server/lib/node.*/code-server'
 check "code-server listening" lsof -i "@127.0.0.1:8080"
 
-entrypoint=$(cat /usr/local/bin/code-server-entrypoint)
-echo "$entrypoint"
-check "code-server auth" grep $'\'code-server.* --auth "none" .*\'' <<<"$entrypoint"
+check "code-server auth" grep $'\'code-server.* --auth "none" .*\'' < /usr/local/bin/code-server-entrypoint
 
 # Report results
 reportResults
