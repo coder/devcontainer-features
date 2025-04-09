@@ -3,7 +3,7 @@ set -e
 
 CODE_SERVER_INSTALL_ARGS=""
 
-if [ -n "$VERSION" ]; then
+if [[ -n $VERSION ]]; then
 	CODE_SERVER_INSTALL_ARGS="$CODE_SERVER_INSTALL_ARGS --version=\"$VERSION\""
 fi
 
@@ -19,7 +19,7 @@ done
 
 CODE_SERVER_WORKSPACE="$_REMOTE_USER_HOME"
 
-if [ -n "$WORKSPACE" ]; then
+if [[ -n $WORKSPACE ]]; then
     CODE_SERVER_WORKSPACE="$WORKSPACE"
 fi
 
