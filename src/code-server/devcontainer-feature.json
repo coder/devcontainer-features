@@ -27,7 +27,12 @@
         "workspace": {
              "type": "string",
              "default": ""
-         }
+         },
+        "auth": {
+            "type": "string",
+            "enum": ["password", "none"],
+            "default": "password"
+        }
     },
     "entrypoint": "/usr/local/bin/code-server-entrypoint",
     "dependsOn": {
