@@ -38,5 +38,21 @@
                 "workspace": "/home"
             }
         }
+    },
+    "code-server-auth-none": {
+        "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+        "features": {
+            "code-server": {
+                "auth": "none"
+            }
+        }
+    },
+    "code-server-auth-password": {
+        "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+        "features": {
+            "code-server": {
+                "auth": "password"
+            }
+        }
     }
 }
