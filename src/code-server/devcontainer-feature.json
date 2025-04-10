@@ -10,6 +10,41 @@
             "default": "password",
             "description": "The type of authentication to use. When 'password' is selected, code-server will auto-generate a password. 'none' disables authentication entirely."
         },
+        "disableFileDownloads": {
+            "type": "boolean",
+            "default": false,
+            "description": "Disable file downloads from Code. When enabled, users will not be able to download files from the editor."
+        },
+        "disableFileUploads": {
+            "type": "boolean",
+            "default": false,
+            "description": "Disable file uploads to Code. When enabled, users will not be able to upload files to the editor."
+        },
+        "disableGettingStartedOverride": {
+            "type": "boolean",
+            "default": false,
+            "description": "Disable the coder/coder override in the Help: Getting Started page."
+        },
+        "disableProxy": {
+            "type": "boolean",
+            "default": false,
+            "description": "Disable domain and path proxy routes."
+        },
+        "disableTelemetry": {
+            "type": "boolean",
+            "default": false,
+            "description": "Disable telemetry reporting."
+        },
+        "disableUpdateCheck": {
+            "type": "boolean",
+            "default": false,
+            "description": "Disable update check. Without this flag, code-server checks every 6 hours against the latest github release and notifies once a week when updates are available."
+        },
+        "disableWorkspaceTrust": {
+            "type": "boolean",
+            "default": false,
+            "description": "Disable Workspace Trust feature. This only affects the current session."
+        },
         "extensions": {
             "type": "string",
             "default": "",
