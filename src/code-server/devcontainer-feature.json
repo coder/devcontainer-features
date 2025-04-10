@@ -4,34 +4,36 @@
     "version": "1.0.0",
     "description": "VS Code in the browser",
     "options": {
-        "version": {
-            "type": "string",
-            "default": ""
-        },
-        "host": {
-            "type": "string",
-            "default": "127.0.0.1"
-        },
-        "port": {
-            "type": "string",
-            "default": "8080"
-        },
-        "args": {
-            "type": "string",
-            "default": ""
-        },
-        "extensions": {
-            "type": "string",
-            "default": ""
-        },
-        "workspace": {
-             "type": "string",
-             "default": ""
-         },
         "auth": {
             "type": "string",
             "enum": ["password", "none"],
-            "default": "password"
+            "default": "password",
+            "description": "The type of authentication to use. When 'password' is selected, code-server will auto-generate a password. 'none' disables authentication entirely."
+        },
+        "extensions": {
+            "type": "string",
+            "default": "",
+            "description": "Comma-separated list of VS Code extensions to install. Format: 'publisher.extension[@version]' (e.g., 'ms-python.python,ms-azuretools.vscode-docker')."
+        },
+        "host": {
+            "type": "string",
+            "default": "127.0.0.1",
+            "description": "The address to bind to for the code-server. Use '0.0.0.0' to listen on all interfaces."
+        },
+        "port": {
+            "type": "string",
+            "default": "8080",
+            "description": "The port to bind to for the code-server."
+        },
+        "version": {
+            "type": "string",
+            "default": "",
+            "description": "The version of code-server to install. If empty, installs the latest version."
+        },
+        "workspace": {
+            "type": "string",
+            "default": "",
+            "description": "Path to the workspace or folder to open on startup. Can be a directory or a .code-workspace file."
         }
     },
     "entrypoint": "/usr/local/bin/code-server-entrypoint",
