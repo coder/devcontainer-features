@@ -23,7 +23,11 @@
         "extensions": {
             "type": "string",
             "default": ""
-        }
+        },
+        "workspace": {
+             "type": "string",
+             "default": ""
+         }
     },
     "entrypoint": "/usr/local/bin/code-server-entrypoint",
     "dependsOn": {
