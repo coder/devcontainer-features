@@ -54,5 +54,75 @@
                 "auth": "password"
             }
         }
+    },
+    "code-server-disable-file-downloads": {
+        "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+        "features": {
+            "code-server": {
+                "disableFileDownloads": true
+            }
+        }
+    },
+    "code-server-disable-file-uploads": {
+        "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+        "features": {
+            "code-server": {
+                "disableFileUploads": true
+            }
+        }
+    },
+    "code-server-disable-getting-started-override": {
+        "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+        "features": {
+            "code-server": {
+                "disableGettingStartedOverride": true
+            }
+        }
+    },
+    "code-server-disable-proxy": {
+        "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+        "features": {
+            "code-server": {
+                "disableProxy": true
+            }
+        }
+    },
+    "code-server-disable-telemetry": {
+        "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+        "features": {
+            "code-server": {
+                "disableTelemetry": true
+            }
+        }
+    },
+    "code-server-disable-update-check": {
+        "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+        "features": {
+            "code-server": {
+                "disableUpdateCheck": true
+            }
+        }
+    },
+    "code-server-disable-workspace-trust": {
+        "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+        "features": {
+            "code-server": {
+                "disableWorkspaceTrust": true
+            }
+        }
+    },
+    "code-server-disable-multiple-options": {
+        "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+        "features": {
+            "code-server": {
+                "disableFileDownloads": true,
+                "disableFileUploads": true,
+                "disableGettingStartedOverride": true,
+                "disableProxy": true,
+                "disableTelemetry": true,
+                "disableUpdateCheck": true,
+                "disableWorkspaceTrust": true
+            }
+        }
     }
 }
