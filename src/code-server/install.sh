@@ -23,12 +23,44 @@ if [[ -n $WORKSPACE ]]; then
     CODE_SERVER_WORKSPACE="$WORKSPACE"
 fi
 
+DISABLE_FLAGS=()
+
+if [[ "$DISABLEFILEDOWNLOADS" == "true" ]]; then
+    DISABLE_FLAGS+=(--disable-file-downloads)
+fi
+
+if [[ "$DISABLEFILEUPLOADS" == "true" ]]; then
+    DISABLE_FLAGS+=(--disable-file-uploads)
+fi
+
+if [[ "$DISABLEGETTINGSTARTEDOVERRIDE" == "true" ]]; then
+    DISABLE_FLAGS+=(--disable-getting-started-override)
+fi
+
+if [[ "$DISABLEPROXY" == "true" ]]; then
+    DISABLE_FLAGS+=(--disable-proxy)
+fi
+
+if [[ "$DISABLETELEMETRY" == "true" ]]; then
+    DISABLE_FLAGS+=(--disable-telemetry)
+fi
+
+if [[ "$DISABLEUPDATECHECK" == "true" ]]; then
+    DISABLE_FLAGS+=(--disable-update-check)
+fi
+
+if [[ "$DISABLEWORKSPACETRUST" == "true" ]]; then
+    DISABLE_FLAGS+=(--disable-workspace-trust)
+fi
+
 cat > /usr/local/bin/code-server-entrypoint \
 << EOF
 #!/usr/bin/env bash
 set -e
 
-su $_REMOTE_USER -c 'code-server --auth "$AUTH" --bind-addr "$HOST:$PORT" "$CODE_SERVER_WORKSPACE"'
+$(declare -p DISABLE_FLAGS)
+
+su $_REMOTE_USER -c 'code-server --auth "$AUTH" --bind-addr "$HOST:$PORT" "\${DISABLE_FLAGS[@]}" "$CODE_SERVER_WORKSPACE"'
 EOF
 
 chmod +x /usr/local/bin/code-server-entrypoint
