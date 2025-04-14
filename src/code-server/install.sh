@@ -56,18 +56,15 @@ fi
 CERT_FLAGS=()
 
 if [[ -n "$CERT" ]]; then
-    CERT_FLAGS+=(--cert)
-    CERT_FLAGS+=("$CERT")
+    CERT_FLAGS+=(--cert "$CERT")
 fi
 
 if [[ -n "$CERTHOST" ]]; then
-    CERT_FLAGS+=(--cert-host)
-    CERT_FLAGS+=("$CERTHOST")
+    CERT_FLAGS+=(--cert-host "$CERTHOST")
 fi
 
 if [[ -n "$CERTKEY" ]]; then
-    CERT_FLAGS+=(--cert-key)
-    CERT_FLAGS+=("$CERTKEY")
+    CERT_FLAGS+=(--cert-key "$CERTKEY")
 fi
 
 cat > /usr/local/bin/code-server-entrypoint \
