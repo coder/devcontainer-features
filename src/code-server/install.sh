@@ -23,7 +23,6 @@ if [[ -n $WORKSPACE ]]; then
     CODE_SERVER_WORKSPACE="$WORKSPACE"
 fi
 
-# Build disable flags based on boolean options
 DISABLE_FLAGS=""
 
 if [[ "$DISABLEFILEDOWNLOADS" == "true" ]]; then
