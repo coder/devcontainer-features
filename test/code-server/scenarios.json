@@ -124,5 +124,22 @@
                 "disableWorkspaceTrust": true
             }
         }
+    },
+    "code-server-cert": {
+        "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+        "features": {
+            "code-server": {
+                "cert": "/path/to/cert.pem",
+                "certKey": "/path/to/key.pem"
+            }
+        }
+    },
+    "code-server-cert-host": {
+        "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+        "features": {
+            "code-server": {
+                "certHost": "coder.com"
+            }
+        }
     }
 }
