@@ -75,11 +75,6 @@
             "default": "8080",
             "description": "The port to bind to for the code-server."
         },
-        "version": {
-            "type": "string",
-            "default": "",
-            "description": "The version of code-server to install. If empty, installs the latest version."
-        },
         "socket": {
             "type": "string",
             "default": "",
@@ -89,6 +84,11 @@
             "type": "string",
             "default": "",
             "description": "File mode of the socket when using the socket option."
+        },
+        "version": {
+            "type": "string",
+            "default": "",
+            "description": "The version of code-server to install. If empty, installs the latest version."
         },
         "workspace": {
             "type": "string",
