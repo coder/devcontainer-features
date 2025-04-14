@@ -9,7 +9,7 @@ check "code-server version" code-server --version
 check "code-server running" pgrep -f 'code-server/lib/node.*/code-server'
 check "code-server listening" lsof -i "@127.0.0.1:8080"
 
-check "code-server disable-file-uploads" grep $'\'code-server.* --disable-file-uploads .*' < /usr/local/bin/code-server-entrypoint
+check "code-server disable-file-uploads" grep '"--disable-file-uploads"' < /usr/local/bin/code-server-entrypoint
 
 # Report results
 reportResults

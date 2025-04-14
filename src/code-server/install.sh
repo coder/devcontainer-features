@@ -58,7 +58,9 @@ cat > /usr/local/bin/code-server-entrypoint \
 #!/usr/bin/env bash
 set -e
 
-su $_REMOTE_USER -c 'code-server --auth "$AUTH" --bind-addr "$HOST:$PORT" ${DISABLE_FLAGS[*]} "$CODE_SERVER_WORKSPACE"'
+$(declare -p DISABLE_FLAGS)
+
+su $_REMOTE_USER -c 'code-server --auth "$AUTH" --bind-addr "$HOST:$PORT" "\${DISABLE_FLAGS[@]}" "$CODE_SERVER_WORKSPACE"'
 EOF
 
 chmod +x /usr/local/bin/code-server-entrypoint
