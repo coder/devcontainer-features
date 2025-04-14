@@ -30,6 +30,8 @@ VS Code in the browser
 | host | The address to bind to for the code-server. Use '0.0.0.0' to listen on all interfaces. | string | 127.0.0.1 |
 | port | The port to bind to for the code-server. | string | 8080 |
 | version | The version of code-server to install. If empty, installs the latest version. | string | - |
+| socket | Path to a socket. When specified, host and port will be ignored. | string | - |
+| socketMode | File mode of the socket when using the socket option. | string | - |
 | workspace | Path to the workspace or folder to open on startup. Can be a directory or a .code-workspace file. | string | - |
 
 

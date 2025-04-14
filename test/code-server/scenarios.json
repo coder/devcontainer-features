@@ -141,5 +141,22 @@
                 "certHost": "coder.com"
             }
         }
+    },
+    "code-server-socket": {
+        "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+        "features": {
+            "code-server": {
+                "socket": "/tmp/code-server.sock"
+            }
+        }
+    },
+    "code-server-socket-with-mode": {
+        "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+        "features": {
+            "code-server": {
+                "socket": "/tmp/code-server.sock",
+                "socketMode": "777"
+            }
+        }
     }
 }

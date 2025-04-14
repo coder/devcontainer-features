@@ -80,6 +80,16 @@
             "default": "",
             "description": "The version of code-server to install. If empty, installs the latest version."
         },
+        "socket": {
+            "type": "string",
+            "default": "",
+            "description": "Path to a socket. When specified, host and port will be ignored."
+        },
+        "socketMode": {
+            "type": "string",
+            "default": "",
+            "description": "File mode of the socket when using the socket option."
+        },
         "workspace": {
             "type": "string",
             "default": "",
