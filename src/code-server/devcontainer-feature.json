@@ -38,7 +38,7 @@
         "disableUpdateCheck": {
             "type": "boolean",
             "default": false,
-            "description": "Disable update check. Without this flag, code-server checks every 6 hours against the latest github release and notifies once a week when updates are available."
+            "description": "Disable update check. Without this flag, code-server checks every 6 hours against the latest GitHub release and notifies once a week when updates are available."
         },
         "disableWorkspaceTrust": {
             "type": "boolean",

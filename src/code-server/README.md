@@ -21,7 +21,7 @@ VS Code in the browser
 | disableGettingStartedOverride | Disable the coder/coder override in the Help: Getting Started page. | boolean | false |
 | disableProxy | Disable domain and path proxy routes. | boolean | false |
 | disableTelemetry | Disable telemetry reporting. | boolean | false |
-| disableUpdateCheck | Disable update check. Without this flag, code-server checks every 6 hours against the latest github release and notifies once a week when updates are available. | boolean | false |
+| disableUpdateCheck | Disable update check. Without this flag, code-server checks every 6 hours against the latest GitHub release and notifies once a week when updates are available. | boolean | false |
 | disableWorkspaceTrust | Disable Workspace Trust feature. This only affects the current session. | boolean | false |
 | extensions | Comma-separated list of VS Code extensions to install. Format: 'publisher.extension[@version]' (e.g., 'ms-python.python,ms-azuretools.vscode-docker'). | string | - |
 | host | The address to bind to for the code-server. Use '0.0.0.0' to listen on all interfaces. | string | 127.0.0.1 |
