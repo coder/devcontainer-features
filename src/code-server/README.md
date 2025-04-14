@@ -16,6 +16,9 @@ VS Code in the browser
 | Options Id | Description | Type | Default Value |
 |-----|-----|-----|-----|
 | auth | The type of authentication to use. When 'password' is selected, code-server will auto-generate a password. 'none' disables authentication entirely. | string | password |
+| cert | Path to certificate. A self signed certificate is generated if none is provided. | string | - |
+| certHost | hostname to use when generating a self signed certificate. | string | - |
+| certKey | path to certificate key when using non-generated cert. | string | - |
 | disableFileDownloads | Disable file downloads from Code. When enabled, users will not be able to download files from the editor. | boolean | false |
 | disableFileUploads | Disable file uploads to Code. When enabled, users will not be able to upload files to the editor. | boolean | false |
 | disableGettingStartedOverride | Disable the coder/coder override in the Help: Getting Started page. | boolean | false |

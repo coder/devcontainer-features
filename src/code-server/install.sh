@@ -53,14 +53,32 @@ if [[ "$DISABLEWORKSPACETRUST" == "true" ]]; then
     DISABLE_FLAGS+=(--disable-workspace-trust)
 fi
 
+CERT_FLAGS=()
+
+if [[ -n "$CERT" ]]; then
+    CERT_FLAGS+=(--cert)
+    CERT_FLAGS+=("$CERT")
+fi
+
+if [[ -n "$CERTHOST" ]]; then
+    CERT_FLAGS+=(--cert-host)
+    CERT_FLAGS+=("$CERTHOST")
+fi
+
+if [[ -n "$CERTKEY" ]]; then
+    CERT_FLAGS+=(--cert-key)
+    CERT_FLAGS+=("$CERTKEY")
+fi
+
 cat > /usr/local/bin/code-server-entrypoint \
 << EOF
 #!/usr/bin/env bash
 set -e
 
 $(declare -p DISABLE_FLAGS)
+$(declare -p CERT_FLAGS)
 
-su $_REMOTE_USER -c 'code-server --auth "$AUTH" --bind-addr "$HOST:$PORT" "\${DISABLE_FLAGS[@]}" "$CODE_SERVER_WORKSPACE"'
+su $_REMOTE_USER -c 'code-server --auth "$AUTH" --bind-addr "$HOST:$PORT" "\${DISABLE_FLAGS[@]}" "\${CERT_FLAGS[@]}" "$CODE_SERVER_WORKSPACE"'
 EOF
 
 chmod +x /usr/local/bin/code-server-entrypoint
