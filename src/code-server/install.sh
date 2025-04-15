@@ -84,7 +84,7 @@ if [[ \$(whoami) != "$_REMOTE_USER" ]]; then
 else
 	$(declare -p FLAGS)
 
-	code-server "\${FLAGS[@]}" "$CODE_SERVER_WORKSPACE"
+	code-server "\${FLAGS[@]}" "$CODE_SERVER_WORKSPACE" >"$LOGFILE" 2>&1
 fi
 EOF
 

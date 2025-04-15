@@ -160,5 +160,13 @@
                 "socketMode": "777"
             }
         }
+    },
+    "code-server-log-file": {
+        "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+        "features": {
+            "code-server": {
+                "logFile": "/tmp/code-server-log-file.log"
+            }
+        }
     }
 }

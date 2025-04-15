@@ -70,6 +70,11 @@
             "default": "127.0.0.1",
             "description": "The address to bind to for the code-server. Use '0.0.0.0' to listen on all interfaces."
         },
+        "logFile": {
+            "type": "string",
+            "default": "/tmp/code-server.log",
+            "description": "Path to a file to send stdout and stderr logs to from code-server."
+        },
         "port": {
             "type": "string",
             "default": "8080",
