@@ -75,6 +75,14 @@ if [[ -n "$SOCKETMODE" ]]; then
     FLAGS+=(--socket-mode "$SOCKETMODE")
 fi
 
+if [[ -n "$LOCALE" ]]; then
+    FLAGS+=(--locale "$LOCALE")
+fi
+
+if [[ -n "$APPNAME" ]]; then
+	FLAGS+=(--app-name "$APPNAME")
+fi
+
 cat > /usr/local/bin/code-server-entrypoint <<EOF
 #!/usr/bin/env bash
 set -e

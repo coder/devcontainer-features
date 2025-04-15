@@ -168,5 +168,21 @@
                 "logFile": "/tmp/code-server-log-file.log"
             }
         }
+    },
+    "code-server-locale": {
+        "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+        "features": {
+            "code-server": {
+                "locale": "fr"
+            }
+        }
+    },
+    "code-server-app-name": {
+        "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+        "features": {
+            "code-server": {
+                "appName": "My Code Server"
+            }
+        }
     }
 }

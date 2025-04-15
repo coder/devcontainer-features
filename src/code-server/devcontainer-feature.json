@@ -4,6 +4,11 @@
     "version": "1.0.0",
     "description": "VS Code in the browser",
     "options": {
+        "appName": {
+            "type": "string",
+            "default": "",
+            "description": "The name to use in branding. Will be shown in titlebar and welcome message."
+        },
         "auth": {
             "type": "string",
             "enum": ["password", "none"],
@@ -69,6 +74,11 @@
             "type": "string",
             "default": "127.0.0.1",
             "description": "The address to bind to for the code-server. Use '0.0.0.0' to listen on all interfaces."
+        },
+        "locale": {
+            "type": "string",
+            "default": "",
+            "description": "Set VS Code display language and language shown on the login page. Format should be an IETF language tag (e.g., 'en', 'fr', 'zh-CN')."
         },
         "logFile": {
             "type": "string",
