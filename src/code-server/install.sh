@@ -23,70 +23,67 @@ if [[ -n $WORKSPACE ]]; then
     CODE_SERVER_WORKSPACE="$WORKSPACE"
 fi
 
-DISABLE_FLAGS=()
+FLAGS=()
+FLAGS+=(--auth "$AUTH")
+FLAGS+=(--bind-addr "$HOST:$PORT")
 
 if [[ "$DISABLEFILEDOWNLOADS" == "true" ]]; then
-    DISABLE_FLAGS+=(--disable-file-downloads)
+    FLAGS+=(--disable-file-downloads)
 fi
 
 if [[ "$DISABLEFILEUPLOADS" == "true" ]]; then
-    DISABLE_FLAGS+=(--disable-file-uploads)
+    FLAGS+=(--disable-file-uploads)
 fi
 
 if [[ "$DISABLEGETTINGSTARTEDOVERRIDE" == "true" ]]; then
-    DISABLE_FLAGS+=(--disable-getting-started-override)
+    FLAGS+=(--disable-getting-started-override)
 fi
 
 if [[ "$DISABLEPROXY" == "true" ]]; then
-    DISABLE_FLAGS+=(--disable-proxy)
+    FLAGS+=(--disable-proxy)
 fi
 
 if [[ "$DISABLETELEMETRY" == "true" ]]; then
-    DISABLE_FLAGS+=(--disable-telemetry)
+    FLAGS+=(--disable-telemetry)
 fi
 
 if [[ "$DISABLEUPDATECHECK" == "true" ]]; then
-    DISABLE_FLAGS+=(--disable-update-check)
+    FLAGS+=(--disable-update-check)
 fi
 
 if [[ "$DISABLEWORKSPACETRUST" == "true" ]]; then
-    DISABLE_FLAGS+=(--disable-workspace-trust)
+    FLAGS+=(--disable-workspace-trust)
 fi
 
-CERT_FLAGS=()
-
 if [[ -n "$CERT" ]]; then
-    CERT_FLAGS+=(--cert "$CERT")
+    FLAGS+=(--cert "$CERT")
 fi
 
 if [[ -n "$CERTHOST" ]]; then
-    CERT_FLAGS+=(--cert-host "$CERTHOST")
+    FLAGS+=(--cert-host "$CERTHOST")
 fi
 
 if [[ -n "$CERTKEY" ]]; then
-    CERT_FLAGS+=(--cert-key "$CERTKEY")
+    FLAGS+=(--cert-key "$CERTKEY")
 fi
 
-SOCKET_FLAGS=()
-
 if [[ -n "$SOCKET" ]]; then
-    SOCKET_FLAGS+=(--socket "$SOCKET")
+    FLAGS+=(--socket "$SOCKET")
 fi
 
 if [[ -n "$SOCKETMODE" ]]; then
-    SOCKET_FLAGS+=(--socket-mode "$SOCKETMODE")
+    FLAGS+=(--socket-mode "$SOCKETMODE")
 fi
 
-cat > /usr/local/bin/code-server-entrypoint \
-<< EOF
+cat > /usr/local/bin/code-server-entrypoint <<EOF
 #!/usr/bin/env bash
 set -e
 
-$(declare -p DISABLE_FLAGS)
-$(declare -p CERT_FLAGS)
-$(declare -p SOCKET_FLAGS)
+$(declare -p FLAGS)
 
-su $_REMOTE_USER -c 'code-server --auth "$AUTH" --bind-addr "$HOST:$PORT" "\${DISABLE_FLAGS[@]}" "\${CERT_FLAGS[@]}" "\${SOCKET_FLAGS[@]}" "$CODE_SERVER_WORKSPACE"'
+CMD="code-server \${FLAGS[@]} \"$CODE_SERVER_WORKSPACE\""
+
+su $_REMOTE_USER -c "\$CMD"
 EOF
 
 chmod +x /usr/local/bin/code-server-entrypoint

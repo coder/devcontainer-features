@@ -126,11 +126,13 @@
         }
     },
     "code-server-cert": {
-        "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+        "build": {
+            "dockerfile": "Dockerfile"
+        },
         "features": {
             "code-server": {
-                "cert": "/path/to/cert.pem",
-                "certKey": "/path/to/key.pem"
+                "cert": "/home/vscode/cert.pem",
+                "certKey": "/home/vscode/key.pem"
             }
         }
     },
