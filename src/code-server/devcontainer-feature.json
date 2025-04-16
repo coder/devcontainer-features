@@ -95,6 +95,11 @@
             "default": "8080",
             "description": "The port to bind to for the code-server."
         },
+        "proxyDomain": {
+            "type": "string",
+            "default": "",
+            "description": "Domain used for proxying ports."
+        },
         "socket": {
             "type": "string",
             "default": "",

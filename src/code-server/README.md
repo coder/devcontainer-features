@@ -33,6 +33,7 @@ VS Code in the browser
 | locale | Set VS Code display language and language shown on the login page. Format should be an IETF language tag (e.g., 'en', 'fr', 'zh-CN'). | string | - |
 | logFile | Path to a file to send stdout and stderr logs to from code-server. | string | /tmp/code-server.log |
 | port | The port to bind to for the code-server. | string | 8080 |
+| proxyDomain | Domain used for proxying ports. | string | - |
 | socket | Path to a socket. When specified, host and port will be ignored. | string | - |
 | socketMode | File mode of the socket when using the socket option. | string | - |
 | trustedOrigins | Comma-separated list of trusted-origins to disable origin check for. Useful if not able to access reverse proxy configuration. | string | - |

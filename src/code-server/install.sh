@@ -105,6 +105,10 @@ for extension in "${proposed_api_extensions[@]}"; do
     FLAGS+=(--enable-proposed-api "$extension")
 done
 
+if [[ "$PROXYDOMAIN" ]]; then
+    FLAGS+=(--proxy-domain "$PROXYDOMAIN")
+fi
+
 cat > /usr/local/bin/code-server-entrypoint <<EOF
 #!/usr/bin/env bash
 set -e

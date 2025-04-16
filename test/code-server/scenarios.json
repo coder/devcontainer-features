@@ -219,5 +219,13 @@
                 ]
             }
         }
+    },
+    "code-server-proxy-domain": {
+        "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+        "features": {
+            "code-server": {
+                "proxyDomain": "dev.coder.com"
+            }
+        }
     }
 }
