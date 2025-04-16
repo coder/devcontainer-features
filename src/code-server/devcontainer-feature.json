@@ -23,12 +23,12 @@
         "certHost": {
             "type": "string",
             "default": "",
-            "description": "hostname to use when generating a self signed certificate."
+            "description": "Hostname to use when generating a self signed certificate."
         },
         "certKey": {
             "type": "string",
             "default": "",
-            "description": "path to certificate key when using non-generated cert."
+            "description": "Path to certificate key when using non-generated cert."
         },
         "disableFileDownloads": {
             "type": "boolean",
