@@ -15,6 +15,7 @@ VS Code in the browser
 
 | Options Id | Description | Type | Default Value |
 |-----|-----|-----|-----|
+| appName | The name to use in branding. Will be shown in titlebar and welcome message. | string | - |
 | auth | The type of authentication to use. When 'password' is selected, code-server will auto-generate a password. 'none' disables authentication entirely. | string | password |
 | cert | Path to certificate. A self signed certificate is generated if none is provided. | string | - |
 | certHost | hostname to use when generating a self signed certificate. | string | - |
