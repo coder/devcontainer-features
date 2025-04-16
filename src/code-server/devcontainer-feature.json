@@ -65,6 +65,11 @@
             "default": false,
             "description": "Disable Workspace Trust feature. This only affects the current session."
         },
+        "enableProposedAPI": {
+            "type": "string",
+            "default": "",
+            "description": "Comma-separated list of VS Code extension IDs to enable proposed API features for."
+        },
         "extensions": {
             "type": "string",
             "default": "",

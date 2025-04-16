@@ -208,5 +208,16 @@
                 "trustedOrigins": ["dev.coder.com", "coder.com"]
             }
         }
+    },
+    "code-server-enable-proposed-api": {
+        "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+        "features": {
+            "code-server": {
+                "enableProposedAPI": [
+                    "rust-lang.rust-analyzer",
+                    "ms-python.python"
+                ]
+            }
+        }
     }
 }

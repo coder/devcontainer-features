@@ -27,6 +27,7 @@ VS Code in the browser
 | disableTelemetry | Disable telemetry reporting. | boolean | false |
 | disableUpdateCheck | Disable update check. Without this flag, code-server checks every 6 hours against the latest GitHub release and notifies once a week when updates are available. | boolean | false |
 | disableWorkspaceTrust | Disable Workspace Trust feature. This only affects the current session. | boolean | false |
+| enableProposedAPI | Comma-separated list of VS Code extension IDs to enable proposed API features for. | string | - |
 | extensions | Comma-separated list of VS Code extensions to install. Format: 'publisher.extension[@version]' (e.g., 'ms-python.python,ms-azuretools.vscode-docker'). | string | - |
 | host | The address to bind to for the code-server. Use '0.0.0.0' to listen on all interfaces. | string | 127.0.0.1 |
 | locale | Set VS Code display language and language shown on the login page. Format should be an IETF language tag (e.g., 'en', 'fr', 'zh-CN'). | string | - |

@@ -98,6 +98,13 @@ for trusted_origin in "${trusted_origins[@]}"; do
     FLAGS+=(--trusted-origins "$trusted_origin")
 done
 
+IFS=',' read -ra proposed_api_extensions <<<"$ENABLEPROPOSEDAPI"
+declare -p proposed_api_extensions
+
+for extension in "${proposed_api_extensions[@]}"; do
+    FLAGS+=(--enable-proposed-api "$extension")
+done
+
 cat > /usr/local/bin/code-server-entrypoint <<EOF
 #!/usr/bin/env bash
 set -e
