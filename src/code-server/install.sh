@@ -10,7 +10,6 @@ fi
 curl -fsSL https://code-server.dev/install.sh | sh -s -- $CODE_SERVER_INSTALL_ARGS
 
 IFS=',' read -ra extensions <<<"$EXTENSIONS"
-declare -p extensions
 
 for extension in "${extensions[@]}"
 do
@@ -73,6 +72,38 @@ fi
 
 if [[ -n "$SOCKETMODE" ]]; then
     FLAGS+=(--socket-mode "$SOCKETMODE")
+fi
+
+if [[ -n "$LOCALE" ]]; then
+    FLAGS+=(--locale "$LOCALE")
+fi
+
+if [[ -n "$APPNAME" ]]; then
+	FLAGS+=(--app-name "$APPNAME")
+fi
+
+if [[ -n "$WELCOMETEXT" ]]; then
+    FLAGS+=(--welcome-text "$WELCOMETEXT")
+fi
+
+if [[ "$VERBOSE" == "true" ]]; then
+    FLAGS+=(--verbose)
+fi
+
+IFS=',' read -ra trusted_origins <<<"$TRUSTEDORIGINS"
+
+for trusted_origin in "${trusted_origins[@]}"; do
+    FLAGS+=(--trusted-origins "$trusted_origin")
+done
+
+IFS=',' read -ra proposed_api_extensions <<<"$ENABLEPROPOSEDAPI"
+
+for extension in "${proposed_api_extensions[@]}"; do
+    FLAGS+=(--enable-proposed-api "$extension")
+done
+
+if [[ "$PROXYDOMAIN" ]]; then
+    FLAGS+=(--proxy-domain "$PROXYDOMAIN")
 fi
 
 cat > /usr/local/bin/code-server-entrypoint <<EOF

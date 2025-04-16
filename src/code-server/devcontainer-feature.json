@@ -4,6 +4,11 @@
     "version": "1.0.0",
     "description": "VS Code in the browser",
     "options": {
+        "appName": {
+            "type": "string",
+            "default": "",
+            "description": "The name to use in branding. Will be shown in titlebar and welcome message."
+        },
         "auth": {
             "type": "string",
             "enum": ["password", "none"],
@@ -18,12 +23,12 @@
         "certHost": {
             "type": "string",
             "default": "",
-            "description": "hostname to use when generating a self signed certificate."
+            "description": "Hostname to use when generating a self signed certificate."
         },
         "certKey": {
             "type": "string",
             "default": "",
-            "description": "path to certificate key when using non-generated cert."
+            "description": "Path to certificate key when using non-generated cert."
         },
         "disableFileDownloads": {
             "type": "boolean",
@@ -60,6 +65,11 @@
             "default": false,
             "description": "Disable Workspace Trust feature. This only affects the current session."
         },
+        "enableProposedAPI": {
+            "type": "string",
+            "default": "",
+            "description": "Comma-separated list of VS Code extension IDs to enable proposed API features for."
+        },
         "extensions": {
             "type": "string",
             "default": "",
@@ -69,6 +79,11 @@
             "type": "string",
             "default": "127.0.0.1",
             "description": "The address to bind to for the code-server. Use '0.0.0.0' to listen on all interfaces."
+        },
+        "locale": {
+            "type": "string",
+            "default": "",
+            "description": "Set VS Code display language and language shown on the login page. Format should be an IETF language tag (e.g., 'en', 'fr', 'zh-CN')."
         },
         "logFile": {
             "type": "string",
@@ -80,6 +95,11 @@
             "default": "8080",
             "description": "The port to bind to for the code-server."
         },
+        "proxyDomain": {
+            "type": "string",
+            "default": "",
+            "description": "Domain used for proxying ports."
+        },
         "socket": {
             "type": "string",
             "default": "",
@@ -90,10 +110,25 @@
             "default": "",
             "description": "File mode of the socket when using the socket option."
         },
+        "trustedOrigins": {
+            "type": "string",
+            "default": "",
+            "description": "Comma-separated list of trusted-origins to disable origin check for. Useful if not able to access reverse proxy configuration."
+        },
+        "verbose": {
+            "type": "boolean",
+            "default": false,
+            "description": "Enable verbose logging."
+        },
         "version": {
             "type": "string",
             "default": "",
             "description": "The version of code-server to install. If empty, installs the latest version."
+        },
+        "welcomeText": {
+            "type": "string",
+            "default": "",
+            "description": "Text to show on login page."
         },
         "workspace": {
             "type": "string",
