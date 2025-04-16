@@ -126,11 +126,13 @@
         }
     },
     "code-server-cert": {
-        "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+        "build": {
+            "dockerfile": "Dockerfile"
+        },
         "features": {
             "code-server": {
-                "cert": "/path/to/cert.pem",
-                "certKey": "/path/to/key.pem"
+                "cert": "/home/vscode/cert.pem",
+                "certKey": "/home/vscode/key.pem"
             }
         }
     },
@@ -156,6 +158,14 @@
             "code-server": {
                 "socket": "/tmp/code-server.sock",
                 "socketMode": "777"
+            }
+        }
+    },
+    "code-server-log-file": {
+        "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+        "features": {
+            "code-server": {
+                "logFile": "/tmp/code-server-log-file.log"
             }
         }
     }
