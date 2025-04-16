@@ -100,6 +100,11 @@
             "default": "",
             "description": "File mode of the socket when using the socket option."
         },
+        "verbose": {
+            "type": "boolean",
+            "default": false,
+            "description": "Enable verbose logging."
+        },
         "version": {
             "type": "string",
             "default": "",

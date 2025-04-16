@@ -192,5 +192,13 @@
                 "welcomeText": "Some Welcome Text"
             }
         }
+    },
+    "code-server-verbose": {
+        "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+        "features": {
+            "code-server": {
+                "verbose": true
+            }
+        }
     }
 }

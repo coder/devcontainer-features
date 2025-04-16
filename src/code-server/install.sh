@@ -87,6 +87,10 @@ if [[ -n "$WELCOMETEXT" ]]; then
     FLAGS+=(--welcome-text "$WELCOMETEXT")
 fi
 
+if [[ "$VERBOSE" == "true" ]]; then
+    FLAGS+=(--verbose)
+fi
+
 cat > /usr/local/bin/code-server-entrypoint <<EOF
 #!/usr/bin/env bash
 set -e
