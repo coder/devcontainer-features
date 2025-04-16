@@ -200,5 +200,13 @@
                 "verbose": true
             }
         }
+    },
+    "code-server-trusted-origins": {
+        "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+        "features": {
+            "code-server": {
+                "trustedOrigins": ["dev.coder.com", "coder.com"]
+            }
+        }
     }
 }

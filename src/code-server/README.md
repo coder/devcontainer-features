@@ -34,6 +34,7 @@ VS Code in the browser
 | port | The port to bind to for the code-server. | string | 8080 |
 | socket | Path to a socket. When specified, host and port will be ignored. | string | - |
 | socketMode | File mode of the socket when using the socket option. | string | - |
+| trustedOrigins | Comma-separated list of trusted-origins to disable origin check for. Useful if not able to access reverse proxy configuration. | string | - |
 | verbose | Enable verbose logging. | boolean | false |
 | version | The version of code-server to install. If empty, installs the latest version. | string | - |
 | welcomeText | Text to show on login page. | string | - |

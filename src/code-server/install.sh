@@ -91,6 +91,13 @@ if [[ "$VERBOSE" == "true" ]]; then
     FLAGS+=(--verbose)
 fi
 
+IFS=',' read -ra trusted_origins <<<"$TRUSTEDORIGINS"
+declare -p trusted_origins
+
+for trusted_origin in "${trusted_origins[@]}"; do
+    FLAGS+=(--trusted-origins "$trusted_origin")
+done
+
 cat > /usr/local/bin/code-server-entrypoint <<EOF
 #!/usr/bin/env bash
 set -e
