@@ -80,12 +80,12 @@ cat > /usr/local/bin/code-server-entrypoint <<EOF
 set -e
 
 if [[ \$(whoami) != "$_REMOTE_USER" ]]; then
-	su $_REMOTE_USER -c /usr/local/bin/code-server-entrypoint
-else
-	$(declare -p FLAGS)
-
-	code-server "\${FLAGS[@]}" "$CODE_SERVER_WORKSPACE" >"$LOGFILE" 2>&1
+	exec su $_REMOTE_USER -c /usr/local/bin/code-server-entrypoint
 fi
+
+$(declare -p FLAGS)
+
+code-server "\${FLAGS[@]}" "$CODE_SERVER_WORKSPACE" >"$LOGFILE" 2>&1
 EOF
 
 chmod +x /usr/local/bin/code-server-entrypoint
