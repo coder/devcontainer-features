@@ -184,5 +184,13 @@
                 "appName": "My Code Server"
             }
         }
+    },
+    "code-server-welcome-text": {
+        "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+        "features": {
+            "code-server": {
+                "welcomeText": "Some Welcome Text"
+            }
+        }
     }
 }

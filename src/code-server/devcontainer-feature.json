@@ -105,6 +105,11 @@
             "default": "",
             "description": "The version of code-server to install. If empty, installs the latest version."
         },
+        "welcomeText": {
+            "type": "string",
+            "default": "",
+            "description": "Text to show on login page."
+        },
         "workspace": {
             "type": "string",
             "default": "",

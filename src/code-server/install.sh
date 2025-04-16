@@ -83,6 +83,10 @@ if [[ -n "$APPNAME" ]]; then
 	FLAGS+=(--app-name "$APPNAME")
 fi
 
+if [[ -n "$WELCOMETEXT" ]]; then
+    FLAGS+=(--welcome-text "$WELCOMETEXT")
+fi
+
 cat > /usr/local/bin/code-server-entrypoint <<EOF
 #!/usr/bin/env bash
 set -e
