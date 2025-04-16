@@ -10,7 +10,6 @@ fi
 curl -fsSL https://code-server.dev/install.sh | sh -s -- $CODE_SERVER_INSTALL_ARGS
 
 IFS=',' read -ra extensions <<<"$EXTENSIONS"
-declare -p extensions
 
 for extension in "${extensions[@]}"
 do
@@ -92,14 +91,12 @@ if [[ "$VERBOSE" == "true" ]]; then
 fi
 
 IFS=',' read -ra trusted_origins <<<"$TRUSTEDORIGINS"
-declare -p trusted_origins
 
 for trusted_origin in "${trusted_origins[@]}"; do
     FLAGS+=(--trusted-origins "$trusted_origin")
 done
 
 IFS=',' read -ra proposed_api_extensions <<<"$ENABLEPROPOSEDAPI"
-declare -p proposed_api_extensions
 
 for extension in "${proposed_api_extensions[@]}"; do
     FLAGS+=(--enable-proposed-api "$extension")
