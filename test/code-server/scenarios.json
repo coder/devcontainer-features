@@ -227,5 +227,25 @@
                 "proxyDomain": "dev.coder.com"
             }
         }
+    },
+    "code-server-password-file": {
+        "build": {
+            "dockerfile": "Dockerfile"
+        },
+        "features": {
+            "code-server": {
+                "passwordFile": "/tmp/code-server-password"
+            }
+        }
+    },
+    "code-server-hashed-password-file": {
+        "build": {
+            "dockerfile": "Dockerfile"
+        },
+        "features": {
+            "code-server": {
+                "hashedPasswordFile": "/tmp/code-server-hashed-password"
+            }
+        }
     }
 }

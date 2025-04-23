@@ -75,6 +75,11 @@
             "default": "",
             "description": "Comma-separated list of VS Code extensions to install. Format: 'publisher.extension[@version]' (e.g., 'ms-python.python,ms-azuretools.vscode-docker')."
         },
+        "hashedPasswordFile": {
+            "type": "string",
+            "default": "",
+            "description": "Path to a file containing the hashed password used for authentication. The password should be hashed with argon2 and be in the encoded form. This takes priority over `passwordFile`."
+        },
         "host": {
             "type": "string",
             "default": "127.0.0.1",
@@ -89,6 +94,11 @@
             "type": "string",
             "default": "/tmp/code-server.log",
             "description": "Path to a file to send stdout and stderr logs to from code-server."
+        },
+        "passwordFile": {
+            "type": "string",
+            "default": "",
+            "description": "Path to a file containing the password used for authentication."
         },
         "port": {
             "type": "string",

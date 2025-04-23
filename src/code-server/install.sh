@@ -116,6 +116,14 @@ fi
 
 $(declare -p FLAGS)
 
+if [[ -f "$PASSWORDFILE" ]]; then
+	export PASSWORD="\$(cat '$PASSWORDFILE')"
+fi
+
+if [[ -f "$HASHEDPASSWORDFILE" ]]; then
+	export HASHED_PASSWORD="\$(cat '$HASHEDPASSWORDFILE')"
+fi
+
 code-server "\${FLAGS[@]}" "$CODE_SERVER_WORKSPACE" >"$LOGFILE" 2>&1
 EOF
 
