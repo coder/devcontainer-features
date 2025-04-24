@@ -4,6 +4,11 @@
     "version": "1.0.0",
     "description": "VS Code in the browser",
     "options": {
+        "absProxyBasePath": {
+            "type": "string",
+            "default": "",
+            "description": "The base path to prefix to all absproxy requests"
+        },
         "appName": {
             "type": "string",
             "default": "",

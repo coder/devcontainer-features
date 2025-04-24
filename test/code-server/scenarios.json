@@ -257,5 +257,13 @@
                 "githubAuthTokenFile": "/tmp/code-server-github-auth-token"
             }
         }
+    },
+    "code-server-abs-proxy-base-path": {
+        "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+        "features": {
+            "code-server": {
+                "absProxyBasePath": "/user/123/workspace"
+            }
+        }
     }
 }
