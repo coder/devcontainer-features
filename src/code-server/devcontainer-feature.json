@@ -75,6 +75,11 @@
             "default": "",
             "description": "Comma-separated list of VS Code extensions to install. Format: 'publisher.extension[@version]' (e.g., 'ms-python.python,ms-azuretools.vscode-docker')."
         },
+        "githubAuthTokenFile": {
+            "type": "string",
+            "default": "",
+            "description": "Path to a file containing your GitHub auth token."
+        },
         "hashedPasswordFile": {
             "type": "string",
             "default": "",

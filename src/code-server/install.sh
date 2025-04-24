@@ -124,6 +124,10 @@ if [[ -f "$HASHEDPASSWORDFILE" ]]; then
 	export HASHED_PASSWORD="\$(cat '$HASHEDPASSWORDFILE')"
 fi
 
+if [[ -f "$GITHUBAUTHTOKENFILE" ]]; then
+    export GITHUB_TOKEN="\$(cat '$GITHUBAUTHTOKENFILE')"
+fi
+
 code-server "\${FLAGS[@]}" "$CODE_SERVER_WORKSPACE" >"$LOGFILE" 2>&1
 EOF
 

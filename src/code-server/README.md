@@ -29,6 +29,7 @@ VS Code in the browser
 | disableWorkspaceTrust | Disable Workspace Trust feature. This only affects the current session. | boolean | false |
 | enableProposedAPI | Comma-separated list of VS Code extension IDs to enable proposed API features for. | string | - |
 | extensions | Comma-separated list of VS Code extensions to install. Format: 'publisher.extension[@version]' (e.g., 'ms-python.python,ms-azuretools.vscode-docker'). | string | - |
+| githubAuthTokenFile | Path to a file containing your GitHub auth token. | string | - |
 | hashedPasswordFile | Path to a file containing the hashed password used for authentication. The password should be hashed with argon2 and be in the encoded form. This takes priority over `passwordFile`. | string | - |
 | host | The address to bind to for the code-server. Use '0.0.0.0' to listen on all interfaces. | string | 127.0.0.1 |
 | locale | Set VS Code display language and language shown on the login page. Format should be an IETF language tag (e.g., 'en', 'fr', 'zh-CN'). | string | - |
