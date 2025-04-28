@@ -227,5 +227,43 @@
                 "proxyDomain": "dev.coder.com"
             }
         }
+    },
+    "code-server-password-file": {
+        "build": {
+            "dockerfile": "Dockerfile"
+        },
+        "features": {
+            "code-server": {
+                "passwordFile": "/tmp/code-server-password"
+            }
+        }
+    },
+    "code-server-hashed-password-file": {
+        "build": {
+            "dockerfile": "Dockerfile"
+        },
+        "features": {
+            "code-server": {
+                "hashedPasswordFile": "/tmp/code-server-hashed-password"
+            }
+        }
+    },
+    "code-server-github-auth-token-file": {
+        "build": {
+            "dockerfile": "Dockerfile"
+        },
+        "features": {
+            "code-server": {
+                "githubAuthTokenFile": "/tmp/code-server-github-auth-token"
+            }
+        }
+    },
+    "code-server-abs-proxy-base-path": {
+        "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+        "features": {
+            "code-server": {
+                "absProxyBasePath": "/user/123/workspace"
+            }
+        }
     }
 }

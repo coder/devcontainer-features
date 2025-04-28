@@ -106,6 +106,10 @@ if [[ "$PROXYDOMAIN" ]]; then
     FLAGS+=(--proxy-domain "$PROXYDOMAIN")
 fi
 
+if [[ "$ABSPROXYBASEPATH" ]]; then
+    FLAGS+=(--abs-proxy-base-path "$ABSPROXYBASEPATH")
+fi
+
 cat > /usr/local/bin/code-server-entrypoint <<EOF
 #!/usr/bin/env bash
 set -e
@@ -115,6 +119,18 @@ if [[ \$(whoami) != "$_REMOTE_USER" ]]; then
 fi
 
 $(declare -p FLAGS)
+
+if [[ -f "$PASSWORDFILE" ]]; then
+	export PASSWORD="\$(<"$PASSWORDFILE")"
+fi
+
+if [[ -f "$HASHEDPASSWORDFILE" ]]; then
+	export HASHED_PASSWORD="\$(<"$HASHEDPASSWORDFILE")"
+fi
+
+if [[ -f "$GITHUBAUTHTOKENFILE" ]]; then
+    export GITHUB_TOKEN="\$(<"$GITHUBAUTHTOKENFILE")"
+fi
 
 code-server "\${FLAGS[@]}" "$CODE_SERVER_WORKSPACE" >"$LOGFILE" 2>&1
 EOF
