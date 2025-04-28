@@ -9,7 +9,7 @@ check "code-server version" code-server --version
 check "code-server running" pgrep -f 'code-server/lib/node.*/code-server'
 check "code-server listening" lsof -i "@127.0.0.1:8080"
 
-check "code-server hashed-password-file" grep $'export HASHED_PASSWORD="$(cat \'/tmp/code-server-hashed-password\')"' < /usr/local/bin/code-server-entrypoint
+check "code-server hashed-password-file" grep 'export HASHED_PASSWORD="$(<"/tmp/code-server-hashed-password")"' < /usr/local/bin/code-server-entrypoint
 check "code-server hashed-password" grep 'Using password from $HASHED_PASSWORD' < /tmp/code-server.log
 
 # Report results

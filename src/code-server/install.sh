@@ -121,15 +121,15 @@ fi
 $(declare -p FLAGS)
 
 if [[ -f "$PASSWORDFILE" ]]; then
-	export PASSWORD="\$(cat '$PASSWORDFILE')"
+	export PASSWORD="\$(<"$PASSWORDFILE")"
 fi
 
 if [[ -f "$HASHEDPASSWORDFILE" ]]; then
-	export HASHED_PASSWORD="\$(cat '$HASHEDPASSWORDFILE')"
+	export HASHED_PASSWORD="\$(<"$HASHEDPASSWORDFILE")"
 fi
 
 if [[ -f "$GITHUBAUTHTOKENFILE" ]]; then
-    export GITHUB_TOKEN="\$(cat '$GITHUBAUTHTOKENFILE')"
+    export GITHUB_TOKEN="\$(<"$GITHUBAUTHTOKENFILE")"
 fi
 
 code-server "\${FLAGS[@]}" "$CODE_SERVER_WORKSPACE" >"$LOGFILE" 2>&1
