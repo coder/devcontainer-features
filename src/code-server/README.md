@@ -50,4 +50,4 @@ VS Code in the browser
 
 ---
 
-_Note: This file was auto-generated from the [devcontainer-feature.json](devcontainer-feature.json).  Add additional notes to a `NOTES.md`._
+_Note: This file was auto-generated from the [devcontainer-feature.json](https://github.com/coder/devcontainer-features/blob/main/src/code-server/devcontainer-feature.json).  Add additional notes to a `NOTES.md`._
