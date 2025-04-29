@@ -2,7 +2,7 @@
     "name": "code-server",
     "id": "code-server",
     "version": "1.0.0",
-    "description": "VS Code in the browser",
+    "description": "VS Code in the browser ([code-server](https://github.com/coder/code-server))",
     "options": {
         "absProxyBasePath": {
             "type": "string",
