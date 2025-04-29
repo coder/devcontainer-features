@@ -4,32 +4,7 @@ This repository contains a collection of [dev container Features](https://contai
 
 ## Available Features
 
-### `code-server`
-
-The `code-server` feature installs [code-server](https://github.com/coder/code-server), which allows you to run VS Code in the browser.
-
-```jsonc
-{
-    "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
-    "features": {
-        "ghcr.io/coder/devcontainer-features/code-server:1": {
-            "host": "127.0.0.1",
-            "port": "8080",
-            "args": "",
-            "extensions": ""
-        }
-    }
-}
-```
-
-#### Options
-
-| Option | Type | Default | Description |
-|--------|------|---------|-------------|
-| `host` | string | `127.0.0.1` | The address to bind to when starting code-server |
-| `port` | string | `8080` | The port to bind to when starting code-server |
-| `args` | string | `""` | Additional arguments to pass to code-server |
-| `extensions` | string | `""` | Comma-separated list of VS Code extensions to install |
+- [code-server](./src/code-server/README.md) - VS Code in the browser
 
 ## Contributing
 

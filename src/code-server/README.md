@@ -1,7 +1,7 @@
 
 # code-server (code-server)
 
-VS Code in the browser
+VS Code in the browser ([code-server](https://github.com/coder/code-server))
 
 ## Example Usage
 
