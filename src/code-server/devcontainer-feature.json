@@ -162,12 +162,11 @@
                 {
                     "slug": "code-server",
                     "displayName": "code-server",
-                    "url": "http://${containerEnv:CODE_SERVER_HOST}:${containerEnv:CODE_SERVER_PORT}/${containerEnv:CODE_SERVER_FOLDER}",
+                    "url": "http://${localEnv:FEATURE_CODE_SERVER_HOST:127.0.0.1}:${localEnv:FEATURE_CODE_SERVER_PORT:8080}/",
                     "openIn": "tab",
                     "share": "owner",
-                    "icon": "/icons/web.svg",
-                    "order": 1,
-                    "group": "Web Editors"
+                    "icon": "/icon/code.svg",
+                    "group": "${localEnv:FEATURE_CODE_SERVER_APP_GROUP:Web Editors}"
                 }
             ]
         }
