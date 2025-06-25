@@ -162,7 +162,7 @@
                 {
                     "slug": "code-server",
                     "displayName": "code-server",
-                    "url": "http://${containerEnv:CODE_SERVER_HOST}:${containerEnv:CODE_SERVER_PORT}/${containerEnv:CODE_SERVER_WORKSPACE}",
+                    "url": "http://${containerEnv:CODE_SERVER_HOST}:${containerEnv:CODE_SERVER_PORT}/${containerEnv:CODE_SERVER_FOLDER}",
                     "openIn": "tab",
                     "share": "owner",
                     "icon": "/icons/web.svg",
