@@ -156,6 +156,22 @@
             "description": "Path to the workspace or folder to open on startup. Can be a directory or a .code-workspace file."
         }
     },
+    "customizations": {
+        "coder": {
+            "apps": [
+                {
+                    "slug": "code-server",
+                    "displayName": "code-server",
+                    "url": "http://${containerEnv:CODE_SERVER_HOST}:${containerEnv:CODE_SERVER_PORT}/${containerEnv:CODE_SERVER_WORKSPACE}",
+                    "openIn": "tab",
+                    "share": "owner",
+                    "icon": "/icons/web.svg",
+                    "order": 1,
+                    "group": "Web Editors"
+                }
+            ]
+        }
+    },
     "entrypoint": "/usr/local/bin/code-server-entrypoint",
     "dependsOn": {
         "ghcr.io/devcontainers/features/common-utils:2": {}

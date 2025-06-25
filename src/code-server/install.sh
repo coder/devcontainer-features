@@ -22,6 +22,13 @@ if [[ -n $WORKSPACE ]]; then
     CODE_SERVER_WORKSPACE="$WORKSPACE"
 fi
 
+# Serialize these options in the container environment for reference in JSON.
+cat <<<EOF > /etc/environment
+CODE_SERVER_HOST=$HOST
+CODE_SERVER_PORT=$PORT
+CODE_SERVER_WORKSPACE=$CODE_SERVER_WORKSPACE
+EOF
+
 FLAGS=()
 FLAGS+=(--auth "$AUTH")
 FLAGS+=(--bind-addr "$HOST:$PORT")
