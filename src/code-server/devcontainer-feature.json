@@ -178,10 +178,10 @@
                     "slug": "code-server",
                     "displayName": "code-server",
                     "url": "http://${localEnv:FEATURE_CODE_SERVER_OPTION_HOST:127.0.0.1}:${localEnv:FEATURE_CODE_SERVER_OPTION_PORT:8080}/",
-                    "openIn": "${localEnv:FEATURE_CODE_SERVER_OPTION_APP_OPEN_IN:slim-window}",
-                    "share": "${localEnv:FEATURE_CODE_SERVER_OPTION_APP_SHARE:owner}",
+                    "openIn": "${localEnv:FEATURE_CODE_SERVER_OPTION_APPOPENIN:slim-window}",
+                    "share": "${localEnv:FEATURE_CODE_SERVER_OPTION_APPSHARE:owner}",
                     "icon": "/icon/code.svg",
-                    "group": "${localEnv:FEATURE_CODE_SERVER_OPTION_APP_GROUP:Web Editors}"
+                    "group": "${localEnv:FEATURE_CODE_SERVER_OPTION_APPGROUP:Web Editors}"
                 }
             ]
         }
