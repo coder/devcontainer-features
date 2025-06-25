@@ -1,7 +1,7 @@
 {
     "name": "code-server",
     "id": "code-server",
-    "version": "1.1.0",
+    "version": "1.1.1",
     "description": "VS Code in the browser ([code-server](https://github.com/coder/code-server))",
     "options": {
         "absProxyBasePath": {
@@ -152,7 +152,7 @@
         },
         "workspace": {
             "type": "string",
-            "default": "",
+            "default": "${containerWorkspaceFolder}",
             "description": "Path to the workspace or folder to open on startup. Can be a directory or a .code-workspace file."
         },
         "appOpenIn": {
