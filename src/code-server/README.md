@@ -45,6 +45,9 @@ VS Code in the browser ([code-server](https://github.com/coder/code-server))
 | version | The version of code-server to install. If empty, installs the latest version. | string | - |
 | welcomeText | Text to show on login page. | string | - |
 | workspace | Path to the workspace or folder to open on startup. Can be a directory or a .code-workspace file. | string | - |
+| appOpenIn | The way to open the app in Coder. Defaults to 'slim-window'. | string | slim-window |
+| appShare | The group to use for the app in Coder. Defaults to 'owner'. | string | owner |
+| appGroup | The group to use for the app in Coder. Defaults to 'Web Editors'. | string | Web Editors |
 
 
 
