@@ -154,6 +154,36 @@
             "type": "string",
             "default": "",
             "description": "Path to the workspace or folder to open on startup. Can be a directory or a .code-workspace file."
+        },
+        "appOpenIn": {
+            "type": "string",
+            "default": "slim-window",
+            "description": "The way to open the app in Coder. Defaults to 'slim-window'."
+        },
+        "appShare": {
+            "type": "string",
+            "default": "owner",
+            "description": "The group to use for the app in Coder. Defaults to 'owner'."
+        },
+        "appGroup": {
+            "type": "string",
+            "default": "Web Editors",
+            "description": "The group to use for the app in Coder. Defaults to 'Web Editors'."
+        }
+    },
+    "customizations": {
+        "coder": {
+            "apps": [
+                {
+                    "slug": "code-server",
+                    "displayName": "code-server",
+                    "url": "http://${localEnv:FEATURE_CODE_SERVER_OPTION_HOST:127.0.0.1}:${localEnv:FEATURE_CODE_SERVER_OPTION_PORT:8080}/",
+                    "openIn": "${localEnv:FEATURE_CODE_SERVER_OPTION_APPOPENIN:slim-window}",
+                    "share": "${localEnv:FEATURE_CODE_SERVER_OPTION_APPSHARE:owner}",
+                    "icon": "/icon/code.svg",
+                    "group": "${localEnv:FEATURE_CODE_SERVER_OPTION_APPGROUP:Web Editors}"
+                }
+            ]
         }
     },
     "entrypoint": "/usr/local/bin/code-server-entrypoint",
