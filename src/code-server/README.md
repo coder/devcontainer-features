@@ -7,7 +7,7 @@ VS Code in the browser ([code-server](https://github.com/coder/code-server))
 
 ```json
 "features": {
-    "ghcr.io/coder/devcontainer-features/code-server:1": {}
+    "ghcr.io/coder/devcontainer-features/code-server:2": {}
 }
 ```
 
