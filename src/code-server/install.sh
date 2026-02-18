@@ -9,12 +9,17 @@ fi
 
 curl -fsSL https://code-server.dev/install.sh | sh -s -- $CODE_SERVER_INSTALL_ARGS
 
-IFS=',' read -ra extensions <<<"$EXTENSIONS"
+if [[ -n "$EXTENSIONS" ]]; then
+    IFS=',' read -ra extensions <<<"$EXTENSIONS"
 
-for extension in "${extensions[@]}"
-do
-    code-server --install-extension "$extension"
-done
+    for extension in "${extensions[@]}"
+    do
+        if ! su "$_REMOTE_USER" -c "code-server --install-extension '$extension'"; then
+            echo "ERROR: Failed to install extension '$extension' as user '$_REMOTE_USER'" >&2
+            exit 1
+        fi
+    done
+fi
 
 CODE_SERVER_WORKSPACE="$_REMOTE_USER_HOME"
 
