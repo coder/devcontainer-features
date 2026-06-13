@@ -7,6 +7,7 @@ This guide contains information about how to contribute to this collection of de
 This repository currently contains the following features:
 
 - `code-server` - Adds VS Code in the browser functionality to your dev container
+- `vscode-web` - Adds VS Code in the browser via Microsoft's official VS Code web server
 
 ## Adding a New Feature
 

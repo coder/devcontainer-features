@@ -1,0 +1,128 @@
+{
+    "name": "vscode-web",
+    "id": "vscode-web",
+    "version": "1.0.0",
+    "description": "VS Code in the browser (Microsoft's official [VS Code web server](https://code.visualstudio.com/docs/remote/vscode-server), with access to the Microsoft Marketplace)",
+    "options": {
+        "acceptLicenseTerms": {
+            "type": "boolean",
+            "default": false,
+            "description": "REQUIRED: set to true to accept the Microsoft VS Code Server license terms (https://aka.ms/vscode-server-license). The feature fails to install when the terms are not accepted."
+        },
+        "connectionTokenFile": {
+            "type": "string",
+            "default": "",
+            "description": "Path to a file containing the connection token used for authentication. When empty, the server starts without a connection token (intended to be used behind an authenticating reverse proxy such as Coder)."
+        },
+        "defaultFolder": {
+            "type": "string",
+            "default": "",
+            "description": "The folder to open by default when no folder is specified in the URL. Can also be passed per-request via the '?folder=' query parameter."
+        },
+        "disableWorkspaceTrust": {
+            "type": "boolean",
+            "default": false,
+            "description": "Disable Workspace Trust feature. This only affects the current session."
+        },
+        "extensions": {
+            "type": "string",
+            "default": "",
+            "description": "Comma-separated list of VS Code extensions to install from the Microsoft Marketplace. Format: 'publisher.extension[@version]' (e.g., 'ms-python.python,ms-python.vscode-pylance')."
+        },
+        "extensionsDir": {
+            "type": "string",
+            "default": "",
+            "description": "Path where extensions are installed. Defaults to a directory under the server data dir."
+        },
+        "host": {
+            "type": "string",
+            "default": "127.0.0.1",
+            "description": "The address to bind to for the VS Code web server. Use '0.0.0.0' to listen on all interfaces."
+        },
+        "logFile": {
+            "type": "string",
+            "default": "/tmp/vscode-web.log",
+            "description": "Path to a file to send stdout and stderr logs to from the VS Code web server."
+        },
+        "logLevel": {
+            "type": "string",
+            "default": "",
+            "description": "Log level of the VS Code web server. One of 'trace', 'debug', 'info', 'warn', 'error', 'critical', 'off'. Defaults to the server's built-in default ('info')."
+        },
+        "port": {
+            "type": "string",
+            "default": "13338",
+            "description": "The port to bind to for the VS Code web server."
+        },
+        "serverBasePath": {
+            "type": "string",
+            "default": "",
+            "description": "Path under which the server is served (e.g. when running behind a path-routing reverse proxy)."
+        },
+        "serverDataDir": {
+            "type": "string",
+            "default": "",
+            "description": "Directory where the server stores its data. Defaults to '~/.vscode-server'."
+        },
+        "socketPath": {
+            "type": "string",
+            "default": "",
+            "description": "Path to a socket to listen on instead of host:port."
+        },
+        "telemetryLevel": {
+            "type": "string",
+            "enum": ["off", "crash", "error", "all"],
+            "default": "off",
+            "description": "Telemetry level of the VS Code web server."
+        },
+        "userDataDir": {
+            "type": "string",
+            "default": "",
+            "description": "Directory where user data (settings, state) is kept. Defaults to a directory under the server data dir."
+        },
+        "version": {
+            "type": "string",
+            "default": "",
+            "description": "The version of VS Code to install (e.g. '1.101.0'). If empty, installs the latest stable version."
+        },
+        "appOpenIn": {
+            "type": "string",
+            "default": "slim-window",
+            "description": "The way to open the app in Coder. Defaults to 'slim-window'."
+        },
+        "appShare": {
+            "type": "string",
+            "default": "owner",
+            "description": "The sharing level to use for the app in Coder. Defaults to 'owner'."
+        },
+        "appGroup": {
+            "type": "string",
+            "default": "Web Editors",
+            "description": "The group to use for the app in Coder. Defaults to 'Web Editors'."
+        }
+    },
+    "customizations": {
+        "coder": {
+            "apps": [
+                {
+                    "slug": "vscode-web",
+                    "displayName": "VS Code Web",
+                    "url": "http://${localEnv:FEATURE_VSCODE_WEB_OPTION_HOST:127.0.0.1}:${localEnv:FEATURE_VSCODE_WEB_OPTION_PORT:13338}/",
+                    "openIn": "${localEnv:FEATURE_VSCODE_WEB_OPTION_APPOPENIN:slim-window}",
+                    "share": "${localEnv:FEATURE_VSCODE_WEB_OPTION_APPSHARE:owner}",
+                    "icon": "/icon/code.svg",
+                    "group": "${localEnv:FEATURE_VSCODE_WEB_OPTION_APPGROUP:Web Editors}",
+                    "healthCheck": {
+                        "url": "http://127.0.0.1:${localEnv:FEATURE_VSCODE_WEB_OPTION_PORT:13338}/version",
+                        "interval": 3,
+                        "threshold": 10
+                    }
+                }
+            ]
+        }
+    },
+    "entrypoint": "/usr/local/bin/vscode-web-entrypoint",
+    "dependsOn": {
+        "ghcr.io/devcontainers/features/common-utils:2": {}
+    }
+}
