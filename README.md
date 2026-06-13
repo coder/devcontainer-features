@@ -5,6 +5,7 @@ This repository contains a collection of [dev container Features](https://contai
 ## Available Features
 
 - [code-server](./src/code-server/README.md) - VS Code in the browser
+- [vscode-web](./src/vscode-web/README.md) - VS Code in the browser (Microsoft's official VS Code web server)
 
 ## Contributing
 
