@@ -47,6 +47,7 @@ append `?folder=/path/to/folder` to the URL.
 ## Coder integration
 
 When used inside a [Coder workspace with dev container support](https://coder.com/docs/admin/templates/extending-templates/devcontainers),
-the feature registers a `vscode-web` app (with a `/healthz` health check) on
-the workspace dashboard via `customizations.coder.apps`. The `app*` options
+the feature registers a `vscode-web` app on the workspace dashboard via
+`customizations.coder.apps`. Its health check probes the `/version` endpoint
+(the standalone web server exposes no `/healthz`). The `app*` options
 only affect this Coder app metadata, not the server itself.

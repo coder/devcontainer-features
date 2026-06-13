@@ -38,7 +38,7 @@
         "features": {
             "vscode-web": {
                 "acceptLicenseTerms": true,
-                "extensions": ["tamasfe.even-better-toml", "redhat.vscode-yaml"]
+                "extensions": "tamasfe.even-better-toml,redhat.vscode-yaml"
             }
         }
     },
